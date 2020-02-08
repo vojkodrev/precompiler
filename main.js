@@ -35,9 +35,6 @@ async function processPre(preFile, dir) {
   preTemplate = preTemplate(templateData)
   preTemplate = JSON.stringify(JSON.parse(preTemplate), null, indent)
 
-  // console.log("preTemplate", preTemplate)
-  // console.log("dstFile", dstFile)
-
   return preTemplate
 }
 
@@ -57,7 +54,6 @@ async function processPreFile(preFile) {
 }
 
 let globPattern = `${process.argv[2] || process.cwd()}/**/*.pre`
-// console.log("globPattern", globPattern)
 
 let glob = new Glob(globPattern)
 glob.on("match", processPreFile)
