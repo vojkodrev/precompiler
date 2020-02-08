@@ -1,0 +1,90 @@
+{
+  "id": "agent.ui-schema.json",
+  "type": "GridLayout",
+  "title": "{{title}}",
+  "numberOfColumns": 4,
+  "elements": [
+    {
+      "ui": {
+        "$ref": "{{header}}#"
+      },
+      "value": {
+        "$ref": "#"
+      }
+    },
+    {
+      "type": "GridLayout",
+      "numberOfColumns": 4,
+      "width": 3,
+      "elements": [
+        {
+          "type": "TabLayout",
+          "options": {
+            "fixedPosition": true,
+            "scrollableTabs": true
+          },
+          "displayBottomNavigation": false,
+          "elementId": "TabLayout",
+          "elements": [
+            {
+              "type": "Tab",
+              "elementId": "all-fields",
+              "title": "Agent Information",
+              "elements": {{{content}}}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "SideContentLayout",
+      "fixedPosition": true,
+      "elements": [
+        {
+          "type": "GridLayout",
+          "numberOfColumns": 2,
+          "elements": [
+            {
+              "type": "TabLayout",
+              "showCollapseBtn": true,
+              "expandTabsLayout": true,
+              "elements": [
+                {
+                  "type": "Tab",
+                  "tabType": "error",
+                  "additionalInfo": {
+                    "display": "ValidationErrorsCount"
+                  },
+                  "elements": [
+                    {
+                      "type": "ValidationSummary",
+                      "value": {
+                        "$ref": "#"
+                      },
+                      "elementId": "RequiredPropertiesValidations"
+                    }
+                  ],
+                  "elementId": "tab-error",
+                  "icon": {
+                    "name": "Bell",
+                    "size": "Large"
+                  }
+                }
+              ],
+              "elementId": "TabLayout"
+            }
+          ]
+        }
+      ],
+      "width": 1
+    },
+    {
+      "ui": {
+        "$ref": "{{footer}}#"
+      },
+      "value": {
+        "$ref": "#"
+      }
+    }    
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "precompiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "detect-indent": "^6.0.0",
+    "glob": "^7.1.6",
+    "handlebars": "^4.7.3"
+  }
+}

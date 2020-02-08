@@ -1,0 +1,374 @@
+{
+  "id": "agent.ui-schema.json",
+  "type": "GridLayout",
+  "title": "Agent",
+  "numberOfColumns": 4,
+  "elements": [
+    {
+      "ui": {
+        "$ref": "../../../../../@config-system/Infrastructure/component/MasterEntityHeader/uiSchema.json#"
+      },
+      "value": {
+        "$ref": "#"
+      }
+    },
+    {
+      "type": "GridLayout",
+      "numberOfColumns": 4,
+      "width": 3,
+      "elements": [
+        {
+          "type": "TabLayout",
+          "options": {
+            "fixedPosition": true,
+            "scrollableTabs": true
+          },
+          "displayBottomNavigation": false,
+          "elementId": "TabLayout",
+          "elements": [
+            {
+              "type": "Tab",
+              "elementId": "all-fields",
+              "title": "Agent Information",
+              "elements": [
+                {
+                  "type": "Section",
+                  "label": "Migration Data",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../../../@config-sava/Infrastructure/component/MigrationData/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../../../@config-sava/Infrastructure/component/MigrationData/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/migrationData"
+                      }
+                    }
+                  ],
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "General Information",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/ServiceProviderGeneralInformation/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/ServiceProviderGeneralInformation/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#"
+                      }
+                    },
+                    {
+                      "type": "Group",
+                      "elements": [
+                        {
+                          "type": "ThreeStateToggle",
+                          "label": "Self-billing",
+                          "value": {
+                            "$ref": "#/properties/Body/properties/selfBilling"
+                          },
+                          "width": 2
+                        },
+                        {
+                          "type": "ThreeStateToggle",
+                          "label": "Key account manager",
+                          "value": {
+                            "$ref": "#/properties/Body/properties/keyAccountManager"
+                          },
+                          "width": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Section",
+                      "label": "Organisation unit",
+                      "elements": [
+                        {
+                          "ui": {
+                            "$ref": "../../../component/AgentOrganisationUnitHR/uiSchema.json#"
+                          },
+                          "dataSchema": {
+                            "$ref": "../../../component/AgentOrganisationUnitHR/dataSchema.json#"
+                          },
+                          "value": {
+                            "$ref": "#/properties/Body/properties/organisationUnitHR"
+                          }
+                        }
+                      ],
+                      "sectionLevel": 2
+                    },
+                    {
+                      "ui": {
+                        "$ref": "../../../component/CostCenterSearch/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../component/CostCenterSearch/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/costCenter"
+                      }
+                    },
+                    {
+                      "ui": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/OrganisationUnitAdditionalInfo/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/OrganisationUnitAdditionalInfo/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/agentAdditionalOrgUnitInfo"
+                      }
+                    }
+                  ],
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "Contact Information",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../component/AgentMultipleContacts/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../component/AgentMultipleContacts/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/agentContacts"
+                      }
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "Agent Information",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/AgentInformation/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/AgentInformation/uiSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/agentInformation"
+                      }
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "Sales channel",
+                  "elements": [
+                    {
+                      "type": "Group",
+                      "elements": [
+                        {
+                          "type": "Input",
+                          "label": "Sales channel",
+                          "value": {
+                            "$ref": "#/properties/Body/properties/salesChannel"
+                          },
+                          "width": 2
+                        }
+                      ]
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "Good repute review",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/GoodReputeReview/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/GoodReputeReview/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/goodReputeReview"
+                      }
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "IDD - Insurance distribution directive",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../component/AgentInsuranceDistributionDirective/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../component/AgentInsuranceDistributionDirective/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/insuranceDistributionDirective"
+                      }
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                },
+                {
+                  "type": "Section",
+                  "label": "Training",
+                  "elements": [
+                    {
+                      "ui": {
+                        "$ref": "../../../component/AgentTrainingInformationHR/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../component/AgentTrainingInformationHR/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/trainingInformation/properties/trainingInfoHR"
+                      }
+                    },
+                    {
+                      "ui": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/AgentTrainingInformation/uiSchema.json#"
+                      },
+                      "dataSchema": {
+                        "$ref": "../../../../../@config-sava/Organisation/component/AgentTrainingInformation/dataSchema.json#"
+                      },
+                      "value": {
+                        "$ref": "#/properties/Body/properties/trainingInformation/properties/trainingInfo"
+                      }
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                },
+                {
+                  "ui": {
+                    "$ref": "../../../../../@config-sava/Organisation/component/AgentRelations/uiSchema.json#"
+                  },
+                  "dataSchema": {
+                    "$ref": "../../../../../@config-sava/Organisation/component/AgentRelations/dataSchema.json#"
+                  },
+                  "value": {
+                    "$ref": "#/properties/Body/properties/agentRelations"
+                  }
+                },
+                {
+                  "type": "Section",
+                  "label": "Attachments",
+                  "elements": [
+                    {
+                      "type": "InlineView",
+                      "showContainerActions": false,
+                      "views": [
+                        {
+                          "viewReference": {
+                            "configurationCodeName": "AttachmentsView",
+                            "configurationVersion": "1",
+                            "configurationConceptType": "SearchView"
+                          },
+                          "viewType": "Search"
+                        }
+                      ],
+                      "value": {
+                        "$ref": "#"
+                      },
+                      "hide": false,
+                      "elementId": "AttachmentsInlineView"
+                    }
+                  ],
+                  "collapsing": {
+                    "enabled": true,
+                    "initial": true
+                  },
+                  "sectionLevel": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "SideContentLayout",
+      "fixedPosition": true,
+      "elements": [
+        {
+          "type": "GridLayout",
+          "numberOfColumns": 2,
+          "elements": [
+            {
+              "type": "TabLayout",
+              "showCollapseBtn": true,
+              "expandTabsLayout": true,
+              "elements": [
+                {
+                  "type": "Tab",
+                  "tabType": "error",
+                  "additionalInfo": {
+                    "display": "ValidationErrorsCount"
+                  },
+                  "elements": [
+                    {
+                      "type": "ValidationSummary",
+                      "value": {
+                        "$ref": "#"
+                      },
+                      "elementId": "RequiredPropertiesValidations"
+                    }
+                  ],
+                  "elementId": "tab-error",
+                  "icon": {
+                    "name": "Bell",
+                    "size": "Large"
+                  }
+                }
+              ],
+              "elementId": "TabLayout"
+            }
+          ]
+        }
+      ],
+      "width": 1
+    },
+    {
+      "ui": {
+        "$ref": "../../../../../@config-system/Infrastructure/component/MasterEntityFooter/uiSchema.json#"
+      },
+      "value": {
+        "$ref": "#"
+      }
+    }
+  ]
+}
